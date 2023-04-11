@@ -115,6 +115,11 @@
          }
          
          context2.putImageData(imageData, 0, 0);
+         
+         var img2 = new Image();
+         img2.onload = function() {
+          context2.drawImage(img2, 0, 0, 600, 500);
+         };
           
         } // end of img.onload
         
