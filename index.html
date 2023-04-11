@@ -14,7 +14,7 @@
  
   Authors in chronological order of contribution:
   Author 1: Timothy E. Riedel
-  Author 2: ?????????
+  Author 2: Neha Deosthali
   
   References:
   http://docs.webplatform.org/wiki/concepts/programming/drawing_images_onto_canvas#Loading_the_image_programmatically
@@ -24,10 +24,10 @@
   http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
   
   Brief Description of Goal of Code:
-  blah, blah, blah,
+  goal is to upload an image and process it to only display the blue pixels
  
   Known Issues:
-  blah, blah, blah, blah
+  
 -->
 
  <head>
@@ -99,10 +99,13 @@
 
           /*  +++++++++++++++ BEGIN IMAGE PROCESSING +++++++++++++++ */
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+         
+          /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
+         
          var canvas2 = document.getElementById("canvasTwo"); //calling second canvas
          var context2 = canvas2.getContext("2d")
          
-         var imageData = context.getImageData(0, 0, 500, 500)
+         var imageData = context.getImageData(0, 0, 600, 500)
          var data = imageData.data;
          
          //changing image color
@@ -112,11 +115,6 @@
          }
          
          context2.putImageData(imageData, 0, 0);
-
-          /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
-          
-          
-          
           
         } // end of img.onload
         
