@@ -99,6 +99,19 @@
 
           /*  +++++++++++++++ BEGIN IMAGE PROCESSING +++++++++++++++ */
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+         var canvas2 = document.getElementById("canvasTwo"); //calling second canvas
+         var context2 = canvas2.getContext("2d")
+         
+         var imageData = context.getImageData(0, 0, 500, 500)
+         var data = imageData.data;
+         
+         //changing image color
+         for(var i = 0; i < data.length; i+=4){
+          data[i] = 0;
+          data[i+1] = 0;
+         }
+         
+         context2.putImageData(imageData, 0, 0);
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
