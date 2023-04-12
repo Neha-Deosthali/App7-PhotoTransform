@@ -26,7 +26,7 @@
   Brief Description of Goal of Code:
   goal is to upload an image and process it to only display the blue pixels
  
-  Known Issues:
+  Known Issues: no known issues
   
 -->
 
@@ -102,19 +102,30 @@
          
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
      
-         var canvas2 = document.getElementById("canvasTwo"); //calling second canvas
-         var context2 = canvas2.getContext("2d")
+         //adding the second canvas
+      <canvas id="canvasTwo" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--Dimension of canvas.-->
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
+        var canvas2 = document.getElementById("canvasTwo"); //Passes information to the canvas.
+        var context2 = canvas2.getContext("2d"); //creating a 2d canvas
+        context2.font = '15pt Calibri'; //Font of text.
+        context2.fillStyle = "black"; //Color of text.
+        context2.fillText("Processed image will go here", 10, 20); //Dimensions of text to be drawn.
+      </script> <!--Ending script.-->
+      
+     
+         var canvas2 = document.getElementById("canvasTwo"); //initiate second canvas variabe
+         var context2 = canvas2.getContext("2d") //set context2 variable
          
-         var imageData = context.getImageData(0, 0, 600, 500)
+         var imageData = context.getImageData(0, 0, 600, 500)//variable that stores pixel data on first canvas
          var data = imageData.data;
          
-         //changing image color
-         for(var i = 0; i < data.length; i+=4){
-          data[i] = 0;
-          data[i+1] = 0;
+         
+         for(var i = 0; i < data.length; i+=4){ //loop that loops the pixel data
+          data[i] = 0; //changes red color in pixels to 0
+          data[i+1] = 0; //changes green color to 0
          }
          
-         context2.putImageData(imageData, 0, 0);
+         context2.putImageData(imageData, 0, 0); //puts new pixel on second canvas
          
          var img2 = new Image();
          img2.onload = function() {
@@ -159,14 +170,7 @@
         context.fillText("Original image will go here", 10, 20);
       </script>
       
-      <canvas id="canvasTwo" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--Dimension of canvas.-->
-      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
-        var canvas2 = document.getElementById("canvasTwo"); //Passes information to the canvas.
-        var context2 = canvas2.getContext("2d"); //Adjusted the type of canvas, which is 2D.
-        context2.font = '20pt Calibri'; //Font of text.
-        context2.fillStyle = "black"; //Color of text.
-        context2.fillText("Processed image will go here", 10, 20); //Dimensions of text to be drawn.
-      </script> <!--Ending script.-->
+ 
 
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
