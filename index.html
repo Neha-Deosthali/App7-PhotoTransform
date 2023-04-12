@@ -104,9 +104,6 @@
      
          var canvas2 = document.getElementById("canvasTwo"); //calling second canvas
          var context2 = canvas2.getContext("2d")
-          context2.font = '15pt Arial';
-          context2.fillStyle = "black";
-          context2.fillText("Processed image here",10 20);
          
          var imageData = context.getImageData(0, 0, 600, 500)
          var data = imageData.data;
@@ -161,6 +158,15 @@
         context.fillStyle = "black";
         context.fillText("Original image will go here", 10, 20);
       </script>
+      
+      <canvas id="canvasTwo" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--Dimension of canvas.-->
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
+        var canvas2 = document.getElementById("canvasTwo"); //Passes information to the canvas.
+        var context2 = canvas2.getContext("2d"); //Adjusted the type of canvas, which is 2D.
+        context2.font = '20pt Calibri'; //Font of text.
+        context2.fillStyle = "black"; //Color of text.
+        context2.fillText("Processed image will go here", 10, 20); //Dimensions of text to be drawn.
+      </script> <!--Ending script.-->
 
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
