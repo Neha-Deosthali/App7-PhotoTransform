@@ -102,9 +102,7 @@
          
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
      
-         //adding the second canvas
-      <canvas id="canvasTwo" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--Dimension of canvas.-->
-     
+         
          var canvas2 = document.getElementById("canvasTwo"); //initiate second canvas variabe
          var context2 = canvas2.getContext("2d") //set context2 variable
          
@@ -162,7 +160,9 @@
         context.fillText("Original image will go here", 10, 20);
       </script>
       
-       <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
+      //adding the second canvas
+      <canvas id="canvasTwo" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--Dimension of canvas.-->
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
         var canvas2 = document.getElementById("canvasTwo"); //Passes information to the canvas.
         var context2 = canvas2.getContext("2d"); //creating a 2d canvas
         context2.font = '15pt Calibri'; //Font of text.
